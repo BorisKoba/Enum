@@ -31,4 +31,15 @@ public enum DayOfWeek {
 	public  DayOfWeek minusDays(int days) {
 		return plusDays(-days);
 	}
+	public static int between (DayOfWeek day1, DayOfWeek day2) {
+		int res = day2.ordinal() - day1.ordinal();
+		if( res <  0) {
+			res += N_DAYS;
+		}
+		return res;	
+	}
+	public int between (DayOfWeek other) {
+		return DayOfWeek.between(this, other);
+	}
+	
 }
